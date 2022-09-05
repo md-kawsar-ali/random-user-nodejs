@@ -1,0 +1,22 @@
+{
+  "name": "random-user",
+  "version": "1.0.0",
+  "description": "Random user backend application using node js and express js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "user",
+    "nodejs",
+    "expressjs",
+    "javascript"
+  ],
+  "author": "md-kawsar-ali",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  }
+}
