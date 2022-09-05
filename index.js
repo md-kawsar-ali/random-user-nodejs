@@ -17,6 +17,14 @@ app.use('/', welcomeRoute);
 app.use('/api/v1/', welcomeRoute);
 app.use('/api/v1/user/', userRoute);
 
+// Unknown Route
+app.use((req, res) => {
+    return res.status(404).send({
+        success: false,
+        message: 'Sorry, Not Found! Try another route/method!'
+    });
+});
+
 // Listener
 app.listen(PORT, () => {
     console.log('Server running in Port: ', PORT);
