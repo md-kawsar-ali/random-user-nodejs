@@ -3,6 +3,7 @@ const fs = require('fs');
 const allController = (req, res) => {
     const { limit } = req.query;
 
+    // Read All Users
     fs.readFile('users.json', (err, data) => {
         if (err) {
             console.log(err);

@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const randomController = (req, res) => {
+    // Read All Users
     fs.readFile('users.json', (err, data) => {
         if (err) {
             console.log(err);
@@ -10,6 +11,8 @@ const randomController = (req, res) => {
             });
         } else {
             const users = JSON.parse(data);
+
+            // Genarate Random Id
             const randomId = Math.floor(Math.random() * users.length);
             const randomUser = users[randomId];
             return res.send({
