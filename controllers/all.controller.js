@@ -1,13 +1,23 @@
 const fs = require('fs');
 
 const allController = (req, res) => {
+    const { limit } = req.query;
+
     fs.readFile('users.json', (err, data) => {
         if (err) {
             console.log(err);
-            return res.sendStatus(500);
+            return res.status(500).send({
+                success: false,
+                message: 'Internal Server Error.'
+            });
         } else {
-            const users = JSON.parse(data);
-            return res.send(users);
+            let users = JSON.parse(data);
+            if (limit) users = users.slice(0, limit);
+
+            return res.send({
+                success: true,
+                message: users
+            });
         }
     });
 }
